@@ -33,6 +33,7 @@ def edge_mask(img, line_size, blur_value):
 
 def color_reduction(img, k):
     # transform the image
+    print(type(img))
     data = np.float32(img).reshape((-1, 3))
     # determine the criteria
 
@@ -51,7 +52,7 @@ def color_reduction(img, k):
 def main(img, title=None):
     images = {}
     for i in range(2, 7):
-        images[f'img{i}'] = color_reduction(img, k=i)
+        images[f'image{i}'] = color_reduction(img, k=i)
 
     fig = plt.figure(figsize=(30, 20))
 
@@ -61,7 +62,4 @@ def main(img, title=None):
         plt.suptitle(title)
         axes.get_xaxis().set_visible(False)
         axes.get_yaxis().set_visible(False)
-        axes.imshow(images[f'img{i}'])
-
-
-# main()
+        axes.imshow(images[f'image{i}'])

@@ -34,6 +34,7 @@ def transform():
     Image.save(image, os.path.join('/templates/transformed/', filename))
     print('IMAGE IS SAVED IN TRANSFORMED')
     return image
+# something is going very wrong
 
 
 def address():

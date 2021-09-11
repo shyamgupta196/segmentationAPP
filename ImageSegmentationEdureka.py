@@ -54,7 +54,7 @@ def main(img, title=None):
     for i in range(2, 7):
         images[f'image{i}'] = color_reduction(img, k=i)
 
-    fig = plt.figure(figsize=(30, 20))
+    # fig = plt.figure(figsize=(30, 20))
 
     for i in range(2, 7):
         plt.tight_layout()

@@ -1,7 +1,7 @@
 '''
 shyam gupta
 '''
-
+import os
 
 import cv2
 import numpy as np
@@ -49,17 +49,11 @@ def color_reduction(img, k):
     return result
 
 
-def main(img, title=None):
-    images = {}
-    for i in range(2, 7):
-        images[f'image{i}'] = color_reduction(img, k=i)
+template_path = r'templates/static/transformed/'
 
-    # fig = plt.figure(figsize=(30, 20))
 
-    for i in range(2, 7):
-        plt.tight_layout()
-        axes = plt.subplot(1, 6, i)
-        plt.suptitle(title)
-        axes.get_xaxis().set_visible(False)
-        axes.get_yaxis().set_visible(False)
-        axes.imshow(images[f'image{i}'])
+def main(img,  filename: str, k=5, title=None):
+    red_image = color_reduction(img, k=int(k))
+    path = os.path.join(template_path, f'{filename}_{k}', '.jpg')
+    cv2.imwrite(path, red_image)
+    return red_image, path

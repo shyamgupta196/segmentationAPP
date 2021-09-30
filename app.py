@@ -11,7 +11,7 @@ from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.figure import Figure
 from werkzeug.utils import secure_filename
 
-from ImageSegmentationEdureka import main, reader
+from ImageSegmentation import main, reader
 
 app = Flask(__name__)
 
